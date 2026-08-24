@@ -2,6 +2,7 @@
 
 require 'database1.php';
 
+//error catchin on browser
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -59,12 +60,16 @@ $pageTitle = 'Gerald\'s PHP blog | ' . $title;
 <div class="md my-4">
     <div class="rounded shadow">
         <div class="p-4">
-            <h2 class="text-xl fw-semibold"><?= $post['title'] ?></h2>
+            <h2 class="text-xl fw-semibold"><a href="post.php?id=<?= $post['id'] ?>" class="text-decoration-none "><?= $post['title'] ?></a></h2>
             <p class="text-secondary fs-5 mt-2"> <?= $post['body'] ?></p>
         </div>
     </div>
 </div>
     <?php endforeach ?>
+    <div class="mt6">
+        <a href="create.php" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-subtle
+         focus:outline-none text-decoration-none">Create Post</a>
+    </div>
 </div>
 
 </body>
