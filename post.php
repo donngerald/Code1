@@ -55,13 +55,14 @@ $post = $stmt->fetch();
             <a href="test.php" class="btn btn-primary mt-3">Back to Home</a>
         </div>
     </div>
-
+    <div class="d-flex flex-column gap-1 w-100">
+    <a href="edit.php?id=<?= $post['id'] ?>" class="bg-success text-light px-4 py-2 rounded w-auto text-center mb-4">Edit</a>
     <!-- Delete Form-->
      <form action="delete.php" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="id" value="<?= $post['id'] ?>" >
-        <button type="submit" name="submit" class="bg-danger text-light px-4 py-2 rounded">Delete</button>
-     </form>
+        <button type="submit" name="submit" class="bg-danger text-light px-4 py-2 rounded w-100">Delete</button>
+     </form></div>
 </div>
   
 
